@@ -54,7 +54,7 @@ SOURCEMM = /home/l4d2server/metamod-source
 ```
 LINK = -lpthread -Wl,-Bstatic -static-libgcc -lboost_thread -lboost_system -lstdc++ -Wl,-Bdynamic
 ```
-## на этот:
+## на этот (должен быть -m32 ОБЯЗАТЕЛЬНО):
 ```
 LINK = -lpthread \
        -Wl,-Bstatic \
