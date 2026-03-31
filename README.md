@@ -20,7 +20,7 @@ git clone https://github.com/alliedmodders/metamod-source
 cd metamod-source
 git checkout 1.12-dev
 
-2.3 Расширение sm-ext-socket
+## 2.3 Расширение sm-ext-socket
 cd ~
 git clone https://github.com/nefarius/sm-ext-socket
 
@@ -40,11 +40,11 @@ ln -s amtl/amtl amtl_files
 cd ~/sm-ext-socket
 nano Makefile
 
-5.1 Указываем пути к SDK (замените l4d2server на ваше имя пользователя)
+## 5.1 Указываем пути к SDK (замените l4d2server на ваше имя пользователя)
 SMSDK = /home/l4d2server/sourcemod
 SOURCEMM = /home/l4d2server/metamod-source
 
-5.2 Замена LINK
+## 5.2 Замена LINK
 LINK = -lpthread -Wl,-Bstatic -static-libgcc -lboost_thread -lboost_system -lstdc++ -Wl,-Bdynamic
 
 на этот:
@@ -56,7 +56,7 @@ LINK = -lpthread \
        -Wl,-Bdynamic \
        -m32 -shared
 
-5.3 Заменить INCLUDE:
+## 5.3 Заменить INCLUDE:
 INCLUDE = -I. -I$(SOURCEMM) -I$(SOURCEMM)/sourcehook -I$(SOURCEMM)/sourcemm \
 	-I$(SMSDK)/public -I$(SMSDK)/public/sourcepawn -I$(SMSDK)/public/extensions
 
@@ -66,7 +66,7 @@ INCLUDE = -I. -I$(SOURCEMM)/public -I$(SOURCEMM)/public/sourcehook \
         -I$(SMSDK)/public/amtl_files \
         -I$(SMSDK)/sourcepawn/include -I$(SMSDK)/public/extensions
 
-5.4 Заменить CFLAGS:
+## 5.4 Заменить CFLAGS:
 CFLAGS = -D_LINUX -DSOURCEMOD_BUILD -Wall -fPIC -m32
 
 на этот (должен быть -m32 ОБЯЗАТЕЛЬНО):
@@ -77,7 +77,7 @@ cd ~/sm-ext-socket
 cp Socket.cpp Socket.cpp.bak
 sed -i 's/boost::system::posix_error::make_error_code(boost::system::posix_error::success)/boost::system::error_code()/g' Socket.cpp
 
-6.1 Проверка: (должно быть пусто)
+## 6.1 Проверка: (должно быть пусто)
 grep -n "posix_error" Socket.cpp
 
 # Шаг 7: Финальная компиляция
@@ -85,14 +85,11 @@ cd ~/sm-ext-socket
 make clean
 make
 
-Ожидаемый вывод: (предупреждения о Boost bind — нормально)
-
-text
+## Ожидаемый вывод: (предупреждения о Boost bind — нормально)
 gcc Release/Socket.ox ... -oRelease/socket.ext.so
 make[1]: Leaving directory '/home/l4d2server/sm-ext-socket'
 
 # Шаг 8: Проверка результата
-bash
 ls -la Release/socket.ext.so
 # Должно быть 2609044 байт где-то
 
