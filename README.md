@@ -135,7 +135,6 @@ cp Release/socket.ext.so /путь/к/серверу/left4dead2/addons/sourcemod
 ```
 ## Шаг 10: Проверка на сервере (в консоли выполните)
 ```
-Перезапустите сервер или в консоли выполните:
 sm exts reload
 sm exts list
 ```
