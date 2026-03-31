@@ -61,7 +61,7 @@ LINK = -lpthread \
 INCLUDE = -I. -I$(SOURCEMM) -I$(SOURCEMM)/sourcehook -I$(SOURCEMM)/sourcemm \
 	-I$(SMSDK)/public -I$(SMSDK)/public/sourcepawn -I$(SMSDK)/public/extensions
 
-## на этот (ПОЛНАЯ СТАТИЧЕСКАЯ СБОРКА):
+## на этот:
 
 INCLUDE = -I. -I$(SOURCEMM)/public -I$(SOURCEMM)/public/sourcehook \
         -I$(SMSDK)/public -I$(SMSDK)/public/amtl \
