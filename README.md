@@ -105,21 +105,24 @@ make
 gcc Release/Socket.ox ... -oRelease/socket.ext.so
 make[1]: Leaving directory '/home/l4d2server/sm-ext-socket'
 ```
-# Шаг 8: Проверка результата
+# Шаг 8: Проверка результата:
+## Должно быть 2609044 байт где-то
 ```
 ls -la Release/socket.ext.so
 ```
-## Должно быть 2609044 байт где-то
+## Должно быть ELF 32-bit LSB shared object
 ```
 file Release/socket.ext.so
 ```
-## Должно быть: ELF 32-bit LSB shared object
+## И ещё вот это
 ```
 ldd Release/socket.ext.so
-# Должно быть ТОЛЬКО:
-# linux-gate.so.1
-# libc.so.6
-# /lib/ld-linux.so.2
+```
+## Должно быть
+```
+linux-gate.so.1
+libc.so.6
+/lib/ld-linux.so.2
 ```
 ## У меня так показывает:
 ```
