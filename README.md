@@ -4,8 +4,9 @@
 Полностью статически слинкованное расширение socket, работающее на любом 32-битном SourceMod сервере **без установки дополнительных библиотек**.
 
 # Шаг 1: Установка системных зависимостей
-``` sudo apt update
-``` sudo apt install -y build-essential gcc-multilib g++-multilib wget git
+```bash
+sudo apt update
+sudo apt install -y build-essential gcc-multilib g++-multilib wget git
 
 # Шаг 2: Скачивание исходных кодов
 ## 2.1 SourceMod SDK (ВАЖНО: флаг --recursive)
