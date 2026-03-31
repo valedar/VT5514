@@ -118,13 +118,7 @@ file Release/socket.ext.so
 ```
 ldd Release/socket.ext.so
 ```
-## Вывод должно быть
-```
-linux-gate.so.1
-libc.so.6
-/lib/ld-linux.so.2
-```
-## У меня так показывает
+## Нормальный вывод примерно такой (Должно быть linux-gate.so.1, libc.so.6 и /lib/ld-linux.so.2)
 ```
 linux-gate.so.1 (0xf5113000)
 libc.so.6 => /usr/lib/i386-linux-gnu/libc.so.6 (0xf4cca000)
