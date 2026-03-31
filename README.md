@@ -47,7 +47,8 @@ SOURCEMM = /home/l4d2server/metamod-source
 ## 5.2 Замена LINK
 LINK = -lpthread -Wl,-Bstatic -static-libgcc -lboost_thread -lboost_system -lstdc++ -Wl,-Bdynamic
 
-на этот:
+## на этот:
+
 LINK = -lpthread \
        -Wl,-Bstatic \
        -L/home/l4d2server/boost_1_74_0/stage/lib \
@@ -60,7 +61,8 @@ LINK = -lpthread \
 INCLUDE = -I. -I$(SOURCEMM) -I$(SOURCEMM)/sourcehook -I$(SOURCEMM)/sourcemm \
 	-I$(SMSDK)/public -I$(SMSDK)/public/sourcepawn -I$(SMSDK)/public/extensions
 
-на этот (ПОЛНАЯ СТАТИЧЕСКАЯ СБОРКА):
+## на этот (ПОЛНАЯ СТАТИЧЕСКАЯ СБОРКА):
+
 INCLUDE = -I. -I$(SOURCEMM)/public -I$(SOURCEMM)/public/sourcehook \
         -I$(SMSDK)/public -I$(SMSDK)/public/amtl \
         -I$(SMSDK)/public/amtl_files \
@@ -69,7 +71,8 @@ INCLUDE = -I. -I$(SOURCEMM)/public -I$(SOURCEMM)/public/sourcehook \
 ## 5.4 Заменить CFLAGS:
 CFLAGS = -D_LINUX -DSOURCEMOD_BUILD -Wall -fPIC -m32
 
-на этот (должен быть -m32 ОБЯЗАТЕЛЬНО):
+## на этот (должен быть -m32 ОБЯЗАТЕЛЬНО):
+
 CFLAGS = -D_LINUX -DSOURCEMOD_BUILD -DBOOST_BIND_GLOBAL_PLACEHOLDERS -Wall -fPIC -m32
 
 # Шаг 6: Исправление кода под Boost 1.74 (ОБЯЗАТЕЛЬНО)
