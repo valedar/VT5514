@@ -8,13 +8,13 @@ sudo apt update
 sudo apt install -y build-essential gcc-multilib g++-multilib wget git
 
 # Шаг 2: Скачивание исходных кодов
-2.1 SourceMod SDK (ВАЖНО: флаг --recursive)
+## 2.1 SourceMod SDK (ВАЖНО: флаг --recursive)
 cd ~
 git clone --recursive https://github.com/alliedmodders/sourcemod
 cd sourcemod
 git checkout 1.12-dev
 
-2.2 Metamod:Source SDK
+## 2.2 Metamod:Source SDK
 cd ~
 git clone https://github.com/alliedmodders/metamod-source
 cd metamod-source
