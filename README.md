@@ -76,11 +76,11 @@ INCLUDE = -I. -I$(SOURCEMM)/public -I$(SOURCEMM)/public/sourcehook \
         -I$(SMSDK)/public/amtl_files \
         -I$(SMSDK)/sourcepawn/include -I$(SMSDK)/public/extensions
 ```
-## 5.4 Заменить CFLAGS:
+## 5.4 Заменить CFLAGS
 ```
 CFLAGS = -D_LINUX -DSOURCEMOD_BUILD -Wall -fPIC -m32
 ```
-## на этот (должен быть -m32 ОБЯЗАТЕЛЬНО):
+## на этот (должен быть -m32 ОБЯЗАТЕЛЬНО)
 ```
 CFLAGS = -D_LINUX -DSOURCEMOD_BUILD -DBOOST_BIND_GLOBAL_PLACEHOLDERS -Wall -fPIC -m32
 ```
@@ -105,12 +105,12 @@ make
 gcc Release/Socket.ox ... -oRelease/socket.ext.so
 make[1]: Leaving directory '/home/l4d2server/sm-ext-socket'
 ```
-# Шаг 8: Проверка результата:
-## Должно быть 2609044 байт где-то
+# Шаг 8: Проверка результата
+## Вот это (Должно быть 2609044 байт где-то)
 ```
 ls -la Release/socket.ext.so
 ```
-## Должно быть ELF 32-bit LSB shared object
+## Вот это (Должен быть ELF 32-bit LSB shared object)
 ```
 file Release/socket.ext.so
 ```
@@ -118,13 +118,13 @@ file Release/socket.ext.so
 ```
 ldd Release/socket.ext.so
 ```
-## Должно быть
+## Вывод должно быть
 ```
 linux-gate.so.1
 libc.so.6
 /lib/ld-linux.so.2
 ```
-## У меня так показывает:
+## У меня так показывает
 ```
 linux-gate.so.1 (0xf5113000)
 libc.so.6 => /usr/lib/i386-linux-gnu/libc.so.6 (0xf4cca000)
@@ -139,11 +139,11 @@ cp Release/socket.ext.so /путь/к/серверу/left4dead2/addons/sourcemod
 sm exts reload
 sm exts list
 ```
-## Или просто перезагрузите сервер и в консолт выполните:
+## Или просто перезагрузите сервер и в консолт выполните
 ```
 sm exts list
 ```
-## Ожидаемый результат (пример):
+## Ожидаемый результат (пример)
 ```
 [04] Socket (3.0.2): Socket extension for SourceMod
 ```
