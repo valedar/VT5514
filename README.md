@@ -124,7 +124,7 @@ linux-gate.so.1 (0xf5113000)
 libc.so.6 => /usr/lib/i386-linux-gnu/libc.so.6 (0xf4cca000)
 /lib/ld-linux.so.2 (0xf5115000)
 ```
-# Шаг 9: Установка на сервер (где left4dead2 заменить на вашу игровую папку)
+## Шаг 9: Установка на сервер (где left4dead2 заменить на вашу игровую папку)
 ```
 cp Release/socket.ext.so /путь/к/серверу/left4dead2/addons/sourcemod/extensions/
 ```
